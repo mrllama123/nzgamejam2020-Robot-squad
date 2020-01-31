@@ -10,7 +10,8 @@ public class NextLevel : MonoBehaviour
         level1,
         level2,
         level3,
-        level4
+        level4,
+        level5
     }
 
     public Levels nextLevel;
@@ -26,7 +27,7 @@ public class NextLevel : MonoBehaviour
             Debug.Log("sceneName to load:  level 1");
             SceneManager.LoadScene("level 1");
         }
-        else if (nextLevel.Equals(Levels.level2)) 
+        else if (nextLevel.Equals(Levels.level2))
         {
             Debug.Log("sceneName to load:  level 2");
             SceneManager.LoadScene("level 2");
@@ -40,6 +41,11 @@ public class NextLevel : MonoBehaviour
         {
             Debug.Log("sceneName to load:  level 4");
             SceneManager.LoadScene("level 4");
+        }
+        else if (nextLevel.Equals(Levels.level5))
+        {
+            Debug.Log("sceneName to load:  level 5");
+            SceneManager.LoadScene("level 5");
         }
     }
 }
