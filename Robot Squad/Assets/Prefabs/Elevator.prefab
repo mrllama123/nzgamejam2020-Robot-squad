@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 7280216595471761082}
   - component: {fileID: 7280216595471761084}
   - component: {fileID: 7280216595471761085}
+  - component: {fileID: 209394971}
   m_Layer: 8
   m_Name: Elevator
   m_TagString: Untagged
@@ -87,7 +88,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280216595471761079}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.956, y: -0.37199998, z: 0}
   m_LocalScale: {x: 1.4092041, y: 1.0141, z: 1}
   m_Children:
@@ -193,10 +194,29 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7280216595471761079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 898640b2091e92e4e892d96c261a463a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   top: {fileID: 7280216594682181604}
   bottom: {fileID: 7280216594298696471}
+--- !u!251 &209394971
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7280216595471761079}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
