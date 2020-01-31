@@ -43,6 +43,13 @@ public class Machine : MonoBehaviour
         {
             elevator.enabled = !elevator.enabled;
         }
+
+        Bridge bridge = GetComponentInChildren<Bridge>();
+        if(bridge != null)
+        {
+            bridge.Toggle();
+        }
+
     }
 
 }
