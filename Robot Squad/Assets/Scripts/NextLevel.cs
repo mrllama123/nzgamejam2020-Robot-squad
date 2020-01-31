@@ -8,7 +8,9 @@ public class NextLevel : MonoBehaviour
     public enum Levels 
     {
         level1,
-        level2
+        level2,
+        level3,
+        level4
     }
 
     public Levels nextLevel;
@@ -28,6 +30,16 @@ public class NextLevel : MonoBehaviour
         {
             Debug.Log("sceneName to load:  level 2");
             SceneManager.LoadScene("level 2");
+        }
+        else if (nextLevel.Equals(Levels.level3))
+        {
+            Debug.Log("sceneName to load:  level 3");
+            SceneManager.LoadScene("level 3");
+        }
+        else if (nextLevel.Equals(Levels.level4))
+        {
+            Debug.Log("sceneName to load:  level 4");
+            SceneManager.LoadScene("level 4");
         }
     }
 }
