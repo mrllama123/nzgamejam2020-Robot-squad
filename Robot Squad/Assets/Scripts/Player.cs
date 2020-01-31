@@ -16,12 +16,17 @@ public class Player : MonoBehaviour
     public Item itemInHands;
     public Transform itemSlot;
 
+    Animator animator;
+    SpriteRenderer spriteRenderer;
+
     void Start()
     {
-        checkGroundRadius = 0.5f;
+        checkGroundRadius = 0.01f;
         speed = 10;
         jumpForce = 10;
         rigidbody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -101,6 +106,21 @@ public class Player : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") > 0 && isGrounded)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
+        }
+
+        Animations(x);
+    }
+
+    private void Animations(float x)
+    {
+        if (Mathf.Abs(rigidbody2D.velocity.x) > 0.1f)
+        {
+            animator.Play("walk");
+            spriteRenderer.flipX = x < 0;
+        }
+        else
+        {
+            animator.Play("idle");
         }
     }
 }

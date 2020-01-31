@@ -19,7 +19,10 @@ public class Machine : MonoBehaviour
         if (itemNeeded == item.type)
         {
             item.machine = this;
-            item.transform.position = itemSlot.transform.position;
+            if (itemSlot != null)
+            {
+                item.transform.position = itemSlot.transform.position;
+            }
             item.transform.SetParent(itemSlot);
             ActionBasedOnItem();
 
