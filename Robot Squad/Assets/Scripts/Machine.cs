@@ -43,6 +43,12 @@ public class Machine : MonoBehaviour
         {
             elevator.enabled = !elevator.enabled;
         }
+
+        Circular[] circulars = GetComponentsInChildren<Circular>();
+        foreach (Circular c in circulars)
+        {
+            c.enabled = !c.enabled;
+        }
     }
 
 }
