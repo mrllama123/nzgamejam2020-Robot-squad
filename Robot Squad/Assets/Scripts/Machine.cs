@@ -38,10 +38,10 @@ public class Machine : MonoBehaviour
 
     public void ActionBasedOnItem()
     {
-        Elevator elevator = GetComponent<Elevator>();
+        Elevator elevator = GetComponentInChildren<Elevator>();
         if (elevator != null)
         {
-            elevator.animator.enabled = !elevator.animator.enabled;
+            elevator.enabled = !elevator.enabled;
         }
     }
 
