@@ -50,6 +50,12 @@ public class Machine : MonoBehaviour
             bridge.Toggle();
         }
 
+
+        Circular[] circulars = GetComponentsInChildren<Circular>();
+        foreach (Circular c in circulars)
+        {
+            c.enabled = !c.enabled;
+        }
     }
 
 }

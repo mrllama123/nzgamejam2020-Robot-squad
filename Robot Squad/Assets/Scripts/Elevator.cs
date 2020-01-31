@@ -5,6 +5,7 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     public Transform top, bottom;
+    public bool hortizontal;
     
     float speed = 3;
     Vector2 topPos, bottomPos;
@@ -17,6 +18,45 @@ public class Elevator : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (hortizontal)
+        {
+            Horizontal();
+        }
+        else
+        {
+            Vertical();
+        }
+    }
+
+    private void Horizontal()
+    {
+        if (goingUp)
+        {
+            print(Vector2.Distance(transform.position, topPos));
+            if (Vector2.Distance(transform.position, topPos) > .5f)
+            {
+                transform.Translate(Vector2.right * Time.deltaTime * speed);
+            }
+            else
+            {
+                goingUp = false;
+            }
+        }
+        else
+        {
+            if (Vector2.Distance(transform.position, bottomPos) > .5f)
+            {
+                transform.Translate(Vector2.left * Time.deltaTime * speed);
+            }
+            else
+            {
+                goingUp = true;
+            }
+        }
+    }
+
+    private void Vertical()
     {
         if (goingUp)
         {
@@ -41,12 +81,4 @@ public class Elevator : MonoBehaviour
             }
         }
     }
-
-
-    //public Animator animator;
-
-    //private void Start()
-    //{
-    //    animator.enabled = false;
-    //}
 }

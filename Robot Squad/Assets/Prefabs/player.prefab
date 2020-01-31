@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5002560214738599157}
   - component: {fileID: 5002560214738599158}
   - component: {fileID: 5002560214738599156}
+  - component: {fileID: 6923509436455230160}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -168,9 +169,24 @@ MonoBehaviour:
   isGroundedChecker: {fileID: 5002560213894114529}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   itemInHands: {fileID: 0}
   itemSlot: {fileID: 5002560215619954838}
+--- !u!114 &6923509436455230160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002560214738599153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef0b4f854ec01a4c8dd6563cd581c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &5002560215619954839
 GameObject:
   m_ObjectHideFlags: 0
