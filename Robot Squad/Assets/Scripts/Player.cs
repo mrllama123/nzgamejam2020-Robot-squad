@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         checkGroundRadius = 0.01f;
         speed = 10;
-        jumpForce = 10;
+        jumpForce = 15;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -87,6 +87,16 @@ public class Player : MonoBehaviour
                     }
                 }
             }
+
+            LeverMachine[] leverMachines = FindObjectsOfType<LeverMachine>();
+            foreach (LeverMachine leverMachine in leverMachines)
+            {
+                if (Vector2.Distance(leverMachine.transform.position, transform.position) < 1)
+                {
+                    leverMachine.ToggleOnOff();
+                }
+            }
+
 
             if (itemInHands != null)
             {
