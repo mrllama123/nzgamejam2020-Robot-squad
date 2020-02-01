@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
 
+    public AudioSource jumpSound, insertSound, pickupSound;
     void Start()
     {
         checkGroundRadius = 0.01f;
@@ -49,6 +50,7 @@ public class Player : MonoBehaviour
                     if (machine.InsertItem(itemInHands))
                     {
                         itemInHands = null;
+                        insertSound.Play();
                         return;
                     }
                     else
@@ -82,6 +84,8 @@ public class Player : MonoBehaviour
                         itemInHands = item;
                         item.transform.position = itemSlot.transform.position;
                         item.transform.SetParent(itemSlot);
+
+                        pickupSound.Play();
 
                         return;
                     }
