@@ -12,7 +12,7 @@ public class Persistent : MonoBehaviour
             i = this;
             DontDestroyOnLoad(gameObject);
         }
-        else Destroy(this); // or gameObject
+        else Destroy(gameObject); // or gameObject
 
     }
 }
