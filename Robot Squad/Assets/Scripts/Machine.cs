@@ -7,6 +7,8 @@ public class Machine : MonoBehaviour
     public Item.Type itemNeeded = Item.Type.Gear;
     public Transform itemSlot;
 
+    Item itemInSlot;
+
     public bool InsertItem(Item item)
     {
         if (item == null)
@@ -16,8 +18,9 @@ public class Machine : MonoBehaviour
         }
 
 
-        if (itemNeeded == item.type)
+        if (itemInSlot == null && itemNeeded == item.type)
         {
+            itemInSlot = item;
             item.machine = this;
             if (itemSlot != null)
             {
@@ -36,6 +39,7 @@ public class Machine : MonoBehaviour
 
     public void RemoveItem()
     {
+        itemInSlot = null;
         ActionBasedOnItem();
     }
 
