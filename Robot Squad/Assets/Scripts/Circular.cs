@@ -5,7 +5,7 @@ using UnityEngine;
 public class Circular : MonoBehaviour
 {
     public GameObject anchor;
-    float speed = 20;
+    float speed = 50;
 
     void LateUpdate()
     {

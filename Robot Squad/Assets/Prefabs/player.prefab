@@ -4889,11 +4889,11 @@ Rigidbody2D:
   m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 6
+  m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 2caf6b9eb886b764196341d55dac1624, type: 2}
   m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_SleepingMode: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &3063527415919207991
 CapsuleCollider2D:

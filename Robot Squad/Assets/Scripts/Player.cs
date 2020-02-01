@@ -39,48 +39,59 @@ public class Player : MonoBehaviour
 
     private void HandleItems()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            //if you have a item check if there is a machine to put it in to if its fit
-            if (itemInHands != null)
+            Machine[] machines = FindObjectsOfType<Machine>();
+            foreach (Machine machine in machines)
             {
-                Machine[] machines = FindObjectsOfType<Machine>();
-                foreach (Machine machine in machines)
+                if (Vector2.Distance(machine.transform.position, transform.position) < 1)
                 {
-                    if (Vector2.Distance(machine.transform.position, transform.position) < 1)
+                    if (machine.InsertItem(itemInHands))
                     {
-                        if (machine.InsertItem(itemInHands))
-                        {
-                            itemInHands = null;
-                        }
-                        else
-                        {
-                            print("not the right item");
-                        }
+                        itemInHands = null;
+                        return;
+                    }
+                    else
+                    {
+                        print("not the right item or machine already has an item in it");
                     }
                 }
             }
-            else
+
+            Item[] allItems = FindObjectsOfType<Item>();
+            foreach (Item item in allItems)
             {
-                //if you don't have an item looks for all items in distance 
-                Item[] allItems = FindObjectsOfType<Item>();
-                foreach (Item item in allItems)
+                if (Vector2.Distance(item.transform.position, transform.position) < 1)
                 {
-                    if (Vector2.Distance(item.transform.position, transform.position) < 1)
+                    if (itemInHands != item)
                     {
-                        if (itemInHands != item)
+                        if (itemInHands != null)
                         {
-                            if (item.machine != null) //remove item from machin
-                            {
-                                item.machine.RemoveItem();
-                                item.machine = null;
-                            }
-                            itemInHands = item;
-                            item.transform.position = itemSlot.transform.position;
-                            item.transform.SetParent(itemSlot);
+                            itemInHands.transform.SetParent(null);
+                            itemInHands = null;
                         }
+
+                        if (item.machine != null)
+                        {
+                            item.machine.transform.SetParent(null);
+                            item.machine.RemoveItem();
+                            item.machine = null;
+                        }
+
+                        itemInHands = item;
+                        item.transform.position = itemSlot.transform.position;
+                        item.transform.SetParent(itemSlot);
+
+                        return;
                     }
                 }
+            }
+
+            if (itemInHands != null)
+            {
+                itemInHands.transform.SetParent(null);
+                itemInHands.transform.position = transform.position;
+                itemInHands = null;
             }
         }
     }
