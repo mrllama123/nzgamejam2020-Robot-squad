@@ -603,6 +603,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horizontal Elevator
       objectReference: {fileID: 0}
+    - target: {fileID: 7280216595471761080, guid: c71d797a8b1f5a448a7e51dd99fa8dd9,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3088098783689858650, guid: 060f48f231d43814d83d362f823a9ad3,
+        type: 3}
     - target: {fileID: 7280216595471761081, guid: c71d797a8b1f5a448a7e51dd99fa8dd9,
         type: 3}
       propertyPath: m_LocalPosition.x
