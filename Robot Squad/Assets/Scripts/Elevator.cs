@@ -33,7 +33,6 @@ public class Elevator : MonoBehaviour
     {
         if (goingUp)
         {
-            print(Vector2.Distance(transform.position, topPos));
             if (Vector2.Distance(transform.position, topPos) > .5f)
             {
                 transform.Translate(Vector2.right * Time.deltaTime * speed);
