@@ -1480,10 +1480,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'When Mr. Bilbo Baggins of Bag End '
+  m_Text: 'starting: activate'
 --- !u!222 &786434488
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1925,10 +1925,10 @@ MonoBehaviour:
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: announced that he would shortly be
+  m_Text: 'Objective: repair'
 --- !u!222 &1261303069
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2195,7 +2195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'celebrating his eleventy-first birthday '
+  m_Text: ' Likelyhood of success: 10%'
 --- !u!222 &1360059244
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2337,7 +2337,7 @@ GameObject:
   - component: {fileID: 1378449581}
   - component: {fileID: 1378449580}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: menu Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4609,7 +4609,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2003695828}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1303281927}
+        m_MethodName: QuitButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2003695828
 MonoBehaviour:
   m_ObjectHideFlags: 0

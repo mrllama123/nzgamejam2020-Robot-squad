@@ -37,6 +37,8 @@ public class Player : MonoBehaviour
         Movement();
 
         HandleItems();
+
+        QuitGame();
     }
 
     private void HandleItems()
@@ -149,6 +151,14 @@ public class Player : MonoBehaviour
         else
         {
             animator.Play("idle");
+        }
+    }
+
+    private void QuitGame()
+    {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
         }
     }
 }
