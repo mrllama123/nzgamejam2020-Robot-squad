@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
     {
         checkGroundRadius = 0.01f;
         speed = 10;
-        jumpForce = 10;
+        jumpForce = 15;
         rigidbody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();

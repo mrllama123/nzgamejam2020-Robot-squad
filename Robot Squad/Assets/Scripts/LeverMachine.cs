@@ -47,8 +47,8 @@ public class LeverMachine : MonoBehaviour
             else
             {
                 onOff = true;
-                ActionBasedOnItem();
             }
+            ActionBasedOnItem();
         }
     }
 

@@ -45,25 +45,32 @@ public class Machine : MonoBehaviour
 
     public void ActionBasedOnItem()
     {
-        Elevator elevator = GetComponentInChildren<Elevator>();
-        if (elevator != null)
+        LeverMachine leverMachine = GetComponentInChildren<LeverMachine>();
+        if (leverMachine != null)
         {
-            elevator.enabled = !elevator.enabled;
+            leverMachine.ActivateLever();
         }
-
-        Bridge bridge = GetComponentInChildren<Bridge>();
-        if(bridge != null)
+        else
         {
-            bridge.Toggle();
+            Elevator elevator = GetComponentInChildren<Elevator>();
+            if (elevator != null)
+            {
+                elevator.enabled = !elevator.enabled;
+            }
+
+            Bridge bridge = GetComponentInChildren<Bridge>();
+            if (bridge != null)
+            {
+                bridge.Toggle();
+            }
+
+
+            Circular[] circulars = GetComponentsInChildren<Circular>();
+            foreach (Circular c in circulars)
+            {
+                c.enabled = !c.enabled;
+            }
         }
-
-
-        Circular[] circulars = GetComponentsInChildren<Circular>();
-        foreach (Circular c in circulars)
-        {
-            c.enabled = !c.enabled;
-        }
-
     }
 
 }
