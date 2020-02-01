@@ -56,6 +56,12 @@ public class Machine : MonoBehaviour
         {
             c.enabled = !c.enabled;
         }
+
+        GravityFieldToggler gravityField = GetComponentInChildren<GravityFieldToggler>();
+        if(gravityField != null)
+        {
+            gravityField.Toggle();
+        }
     }
 
 }
