@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     public AudioSource jumpSound, insertSound, pickupSound;
+
     void Start()
     {
         checkGroundRadius = 0.01f;
@@ -132,6 +133,7 @@ public class Player : MonoBehaviour
         if (Input.GetAxisRaw("Vertical") > 0 && isGrounded)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, jumpForce);
+            jumpSound.Play();
         }
 
         Animations(x);
