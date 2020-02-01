@@ -23,7 +23,7 @@ public class NextLevel : MonoBehaviour
         goToNextLevel();
     }
 
-    void goToNextLevel() 
+    public void goToNextLevel() 
     {
 
         if (nextLevel.Equals(Levels.startLevel))
