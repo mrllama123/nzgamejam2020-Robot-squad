@@ -68,6 +68,7 @@ public class Player : MonoBehaviour
                         if (itemInHands != null)
                         {
                             itemInHands.transform.SetParent(null);
+                            itemInHands.transform.position = transform.position;
                             itemInHands = null;
                         }
 
