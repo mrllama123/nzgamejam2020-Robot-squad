@@ -7,6 +7,8 @@ public class Machine : MonoBehaviour
     public Item.Type itemNeeded = Item.Type.Gear;
     public Transform itemSlot;
 
+    Item itemInSlot;
+
     public bool InsertItem(Item item)
     {
         if (item == null)
@@ -16,10 +18,14 @@ public class Machine : MonoBehaviour
         }
 
 
-        if (itemNeeded == item.type)
+        if (itemInSlot == null && itemNeeded == item.type)
         {
+            itemInSlot = item;
             item.machine = this;
-            item.transform.position = itemSlot.transform.position;
+            if (itemSlot != null)
+            {
+                item.transform.position = itemSlot.transform.position;
+            }
             item.transform.SetParent(itemSlot);
             ActionBasedOnItem();
 
@@ -33,28 +39,37 @@ public class Machine : MonoBehaviour
 
     public void RemoveItem()
     {
+        itemInSlot = null;
         ActionBasedOnItem();
     }
 
     public void ActionBasedOnItem()
     {
-        Elevator elevator = GetComponentInChildren<Elevator>();
-        if (elevator != null)
+        LeverMachine leverMachine = GetComponentInChildren<LeverMachine>();
+        if (leverMachine != null)
         {
-            elevator.enabled = !elevator.enabled;
+            leverMachine.ActivateLever();
         }
-
-        Bridge bridge = GetComponentInChildren<Bridge>();
-        if(bridge != null)
+        else
         {
-            bridge.Toggle();
-        }
+            Elevator elevator = GetComponentInChildren<Elevator>();
+            if (elevator != null)
+            {
+                elevator.enabled = !elevator.enabled;
+            }
+
+            Bridge bridge = GetComponentInChildren<Bridge>();
+            if (bridge != null)
+            {
+                bridge.Toggle();
+            }
 
 
-        Circular[] circulars = GetComponentsInChildren<Circular>();
-        foreach (Circular c in circulars)
-        {
-            c.enabled = !c.enabled;
+            Circular[] circulars = GetComponentsInChildren<Circular>();
+            foreach (Circular c in circulars)
+            {
+                c.enabled = !c.enabled;
+            }
         }
 
         GravityFieldToggler gravityField = GetComponentInChildren<GravityFieldToggler>();
