@@ -61,5 +61,11 @@ public class NextLevel : MonoBehaviour
             Debug.Log("sceneName to load:  end level");
             SceneManager.LoadScene("end level");
         }
+
+        GameObject endSound = GameObject.Find("EndLevel Sound");
+        if (endSound != null)
+        {
+            endSound.GetComponent<AudioSource>().Play();
+        }
     }
 }
