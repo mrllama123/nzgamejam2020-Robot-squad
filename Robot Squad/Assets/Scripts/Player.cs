@@ -78,7 +78,16 @@ public class Player : MonoBehaviour
                 }
             }
 
-            //
+            LeverMachine[] leverMachines = FindObjectsOfType<LeverMachine>();
+            foreach (LeverMachine leverMachine in leverMachines)
+            {
+                if (Vector2.Distance(leverMachine.transform.position, transform.position) < 1)
+                {
+                    leverMachine.ToggleOnOff();
+                }
+            }
+
+
         }
     }
 
