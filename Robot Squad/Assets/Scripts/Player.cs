@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
                         if (item.machine != null)
                         {
-                            item.machine.transform.SetParent(null);
+                            item.transform.SetParent(null);
                             item.machine.RemoveItem();
                             item.machine = null;
                         }
