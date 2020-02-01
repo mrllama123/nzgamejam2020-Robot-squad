@@ -7,11 +7,14 @@ public class NextLevel : MonoBehaviour
 {
     public enum Levels 
     {
+        startLevel,
         level1,
         level2,
         level3,
         level4,
-        level5
+        level5,
+        level7,
+        endLevel
     }
 
     public Levels nextLevel;
@@ -22,7 +25,13 @@ public class NextLevel : MonoBehaviour
 
     void goToNextLevel() 
     {
-        if (nextLevel.Equals(Levels.level1))
+
+        if (nextLevel.Equals(Levels.startLevel))
+        {
+            Debug.Log("sceneName to load:  start level");
+            SceneManager.LoadScene("begin level");
+        }
+        else if (nextLevel.Equals(Levels.level1))
         {
             Debug.Log("sceneName to load:  level 1");
             SceneManager.LoadScene("Level 1");
@@ -46,6 +55,11 @@ public class NextLevel : MonoBehaviour
         {
             Debug.Log("sceneName to load:  level 5");
             SceneManager.LoadScene("level 5");
+        }
+        else if (nextLevel.Equals(Levels.endLevel))
+        {
+            Debug.Log("sceneName to load:  end level");
+            SceneManager.LoadScene("end level");
         }
     }
 }
