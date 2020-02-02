@@ -14,7 +14,8 @@ public class NextLevel : MonoBehaviour
         level4,
         level5,
         level7,
-        endLevel
+        endLevel,
+        titleScreen
     }
 
     public Levels nextLevel;
@@ -56,11 +57,20 @@ public class NextLevel : MonoBehaviour
             Debug.Log("sceneName to load:  level 5");
             SceneManager.LoadScene("level 5");
         }
+        else if (nextLevel.Equals(Levels.level7))
+        {
+            Debug.Log("sceneName to load:  level 7");
+            SceneManager.LoadScene("Level 7");
+        }
         else if (nextLevel.Equals(Levels.endLevel))
         {
             Debug.Log("sceneName to load:  end level");
             SceneManager.LoadScene("end level");
         }
+        else if (nextLevel.Equals(Levels.titleScreen))
+        {
+            Debug.Log("sceneName to load:  Title Screen");
+            SceneManager.LoadScene("Title Screen");
 
         GameObject endSound = GameObject.Find("EndLevel Sound");
         if (endSound != null)
