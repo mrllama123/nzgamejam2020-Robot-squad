@@ -145,8 +145,25 @@ public class Player : MonoBehaviour
     {
         if (Mathf.Abs(rigidbody2D.velocity.x) > 0.1f)
         {
-            animator.Play("walk");
             spriteRenderer.flipX = x < 0;
+        }
+
+        if (rigidbody2D.velocity.y != 0)
+        {
+            if (rigidbody2D.velocity.y > 0)
+            {
+                animator.Play("jump");
+            }
+            else
+            {
+                animator.Play("jumpdown");
+            }
+            return;
+        }
+
+        if (Mathf.Abs(rigidbody2D.velocity.x) > 0.1f)
+        {
+            animator.Play("walk");
         }
         else
         {
