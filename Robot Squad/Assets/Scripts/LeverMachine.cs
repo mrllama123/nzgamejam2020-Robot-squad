@@ -32,7 +32,15 @@ public class LeverMachine : MonoBehaviour
 
     public void ActivateLever()
     {
-        activated = true;
+        activated = !activated;
+        if (!activated && onOff)
+        {
+            ActionBasedOnItem(false);
+        }
+        else if (activated && onOff) {
+            ActionBasedOnItem(true);
+        }
+
     }
 
 
@@ -48,17 +56,19 @@ public class LeverMachine : MonoBehaviour
             {
                 onOff = true;
             }
-            ActionBasedOnItem();
+            ActionBasedOnItem(onOff);
         }
+
+        
     }
 
 
-    void ActionBasedOnItem()
+    void ActionBasedOnItem(bool action)
     {
         Elevator elevator = GetComponentInChildren<Elevator>();
         if (elevator != null)
         {
-            elevator.enabled = !elevator.enabled;
+            elevator.enabled = action;
         }
 
 
