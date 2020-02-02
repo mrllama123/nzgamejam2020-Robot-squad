@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class Player : MonoBehaviour
 
         HandleItems();
 
-        QuitGame();
+        AdditionalInput();
     }
 
     private void HandleItems()
@@ -171,11 +172,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void QuitGame()
+    private void AdditionalInput()
     {
         if (Input.GetKey("escape"))
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 }
