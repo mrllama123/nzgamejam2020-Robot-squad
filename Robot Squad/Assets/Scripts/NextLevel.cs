@@ -71,7 +71,7 @@ public class NextLevel : MonoBehaviour
         {
             Debug.Log("sceneName to load:  Title Screen");
             SceneManager.LoadScene("Title Screen");
-
+        }
         GameObject endSound = GameObject.Find("EndLevel Sound");
         if (endSound != null)
         {

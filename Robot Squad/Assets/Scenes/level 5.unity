@@ -1219,6 +1219,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1638429022}
     m_Modifications:
+    - target: {fileID: 209394971, guid: c71d797a8b1f5a448a7e51dd99fa8dd9, type: 3}
+      propertyPath: m_UseColliderMask
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7280216595471761079, guid: c71d797a8b1f5a448a7e51dd99fa8dd9,
         type: 3}
       propertyPath: m_Name
@@ -1284,6 +1288,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280216595471761084, guid: c71d797a8b1f5a448a7e51dd99fa8dd9,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c71d797a8b1f5a448a7e51dd99fa8dd9, type: 3}
